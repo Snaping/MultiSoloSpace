@@ -1,0 +1,306 @@
+<Window x:Class="RemoteDesk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RemoteDesk - Chrome Remote Desktop Tool"
+        Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" 
+                   Text="RemoteDesk - Chrome Remote Desktop Tool"
+                   FontSize="24" FontWeight="Bold" 
+                   Margin="0,0,0,15" Foreground="#2C3E50"/>
+        
+        <Border Grid.Row="1" Grid.Column="0" 
+                Background="White" CornerRadius="8" Padding="15"
+                BorderBrush="#DDD" BorderThickness="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock Text="Chrome Control" FontSize="16" FontWeight="Bold" 
+                               Margin="0,0,0,10" Foreground="#34495E"/>
+                    
+                    <Grid Margin="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button x:Name="btnStartChrome" Content="Start Chrome" 
+                                Click="BtnStartChrome_Click"
+                                Background="#3498DB" Foreground="White"
+                                Padding="10,8" Margin="0,0,5,0"
+                                Cursor="Hand" BorderThickness="0"/>
+                        
+                        <Button x:Name="btnConnect" Content="Connect" 
+                                Click="BtnConnect_Click"
+                                Background="#2ECC71" Foreground="White"
+                                Padding="10,8" Margin="5,0,0,0"
+                                Cursor="Hand" BorderThickness="0" Grid.Column="1"/>
+                    </Grid>
+                    
+                    <TextBlock Text="Pages" FontWeight="Bold" Margin="0,15,0,5" Foreground="#34495E"/>
+                    <ListBox x:Name="lbPages" Height="80" Margin="0,0,0,5"
+                             SelectionChanged="LbPages_SelectionChanged"
+                             BorderBrush="#DDD" BorderThickness="1"/>
+                    
+                    <TextBlock Text="Navigation" FontSize="16" FontWeight="Bold" 
+                               Margin="0,15,0,10" Foreground="#34495E"/>
+                    
+                    <Grid Margin="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button x:Name="btnBack" Content="←" Click="BtnBack_Click"
+                                Padding="10,8" Margin="0,0,5,0"
+                                Cursor="Hand" BorderBrush="#DDD"/>
+                        
+                        <TextBox x:Name="txtUrl" Text="https://www.google.com"
+                                 Margin="0,0,5,0" Padding="8"
+                                 BorderBrush="#DDD" BorderThickness="1" Grid.Column="1"/>
+                        
+                        <Button x:Name="btnGo" Content="Go" Click="BtnGo_Click"
+                                Background="#3498DB" Foreground="White"
+                                Padding="15,8" Cursor="Hand" BorderThickness="0" Grid.Column="2"/>
+                    </Grid>
+                    
+                    <TextBlock Text="Actions" FontSize="16" FontWeight="Bold" 
+                               Margin="0,15,0,10" Foreground="#34495E"/>
+                    
+                    <GroupBox Header="Click and Mouse" Padding="10" Margin="0,5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,5">
+                                <TextBlock Text="X:" Margin="0,0,0,2"/>
+                                <TextBox x:Name="txtClickX" Text="100" Padding="5"
+                                         BorderBrush="#DDD" BorderThickness="1"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Row="0" Grid.Column="1" Margin="5,0,5,5">
+                                <TextBlock Text="Y:" Margin="0,0,0,2"/>
+                                <TextBox x:Name="txtClickY" Text="100" Padding="5"
+                                         BorderBrush="#DDD" BorderThickness="1"/>
+                            </StackPanel>
+                            
+                            <Button x:Name="btnClick" Content="Click" Click="BtnClick_Click"
+                                    Grid.Row="0" Grid.Column="2"
+                                    Background="#9B59B6" Foreground="White"
+                                    Padding="5,8" Margin="5,15,0,5"
+                                    Cursor="Hand" BorderThickness="0"/>
+                            
+                            <Button x:Name="btnRightClick" Content="Right Click" Click="BtnRightClick_Click"
+                                    Grid.Row="1" Grid.Column="0"
+                                    Background="#E67E22" Foreground="White"
+                                    Padding="5,8" Margin="0,5,5,0"
+                                    Cursor="Hand" BorderThickness="0"/>
+                            
+                            <Button x:Name="btnDoubleClick" Content="Double Click" Click="BtnDoubleClick_Click"
+                                    Grid.Row="1" Grid.Column="1"
+                                    Background="#1ABC9C" Foreground="White"
+                                    Padding="5,8" Margin="5,5,5,0"
+                                    Cursor="Hand" BorderThickness="0"/>
+                            
+                            <Button x:Name="btnHover" Content="Hover" Click="BtnHover_Click"
+                                    Grid.Row="1" Grid.Column="2"
+                                    Background="#16A085" Foreground="White"
+                                    Padding="5,8" Margin="5,5,0,0"
+                                    Cursor="Hand" BorderThickness="0"/>
+                        </Grid>
+                    </GroupBox>
+                    
+                    <GroupBox Header="Drag" Padding="10" Margin="0,5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,5">
+                                <TextBlock Text="From X:" Margin="0,0,0,2"/>
+                                <TextBox x:Name="txtFromX" Text="100" Padding="5"
+                                         BorderBrush="#DDD" BorderThickness="1"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Row="0" Grid.Column="1" Margin="5,0,5,5">
+                                <TextBlock Text="From Y:" Margin="0,0,0,2"/>
+                                <TextBox x:Name="txtFromY" Text="100" Padding="5"
+                                         BorderBrush="#DDD" BorderThickness="1"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Row="0" Grid.Column="2" Margin="5,0,5,5">
+                                <TextBlock Text="To X:" Margin="0,0,0,2"/>
+                                <TextBox x:Name="txtToX" Text="200" Padding="5"
+                                         BorderBrush="#DDD" BorderThickness="1"/>
+                            </StackPanel>
+                            
+                            <StackPanel Grid.Row="0" Grid.Column="3" Margin="5,0,0,5">
+                                <TextBlock Text="To Y:" Margin="0,0,0,2"/>
+                                <TextBox x:Name="txtToY" Text="200" Padding="5"
+                                         BorderBrush="#DDD" BorderThickness="1"/>
+                            </StackPanel>
+                            
+                            <Button x:Name="btnDrag" Content="Drag" Click="BtnDrag_Click"
+                                    Grid.Row="1" Grid.ColumnSpan="4"
+                                    Background="#E74C3C" Foreground="White"
+                                    Padding="10,8" Margin="0,5,0,0"
+                                    Cursor="Hand" BorderThickness="0"/>
+                        </Grid>
+                    </GroupBox>
+                    
+                    <GroupBox Header="Text Input" Padding="10" Margin="0,5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBox x:Name="txtInput" Text="Hello World"
+                                     Margin="0,0,0,5" Padding="8"
+                                     BorderBrush="#DDD" BorderThickness="1"/>
+                            
+                            <Button x:Name="btnType" Content="Type Text" Click="BtnType_Click"
+                                    Grid.Row="1"
+                                    Background="#27AE60" Foreground="White"
+                                    Padding="10,8" Cursor="Hand" BorderThickness="0"/>
+                        </Grid>
+                    </GroupBox>
+                    
+                    <GroupBox Header="JavaScript" Padding="10" Margin="0,5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBox x:Name="txtScript" Text="document.title"
+                                     Margin="0,0,0,5" Padding="8"
+                                     BorderBrush="#DDD" BorderThickness="1"
+                                     AcceptsReturn="True" Height="60"
+                                     TextWrapping="Wrap"/>
+                            
+                            <Button x:Name="btnEval" Content="Evaluate Script" Click="BtnEval_Click"
+                                    Grid.Row="1"
+                                    Background="#8E44AD" Foreground="White"
+                                    Padding="10,8" Cursor="Hand" BorderThickness="0"/>
+                        </Grid>
+                    </GroupBox>
+                    
+                    <TextBlock Text="Screenshot" FontSize="16" FontWeight="Bold" 
+                               Margin="0,15,0,10" Foreground="#34495E"/>
+                    
+                    <Button x:Name="btnScreenshot" Content="Take Screenshot" 
+                            Click="BtnScreenshot_Click"
+                            Background="#34495E" Foreground="White"
+                            Padding="10,8" Margin="0,5"
+                            Cursor="Hand" BorderThickness="0"/>
+                    
+                    <Button x:Name="btnSnapshot" Content="Take Text Snapshot" 
+                            Click="BtnSnapshot_Click"
+                            Background="#7F8C8D" Foreground="White"
+                            Padding="10,8" Margin="0,5"
+                            Cursor="Hand" BorderThickness="0"/>
+                    
+                    <TextBlock Text="MCP Server" FontSize="16" FontWeight="Bold" 
+                               Margin="0,15,0,10" Foreground="#34495E"/>
+                    
+                    <Grid Margin="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button x:Name="btnStartMcp" Content="Start MCP Server" 
+                                Click="BtnStartMcp_Click"
+                                Background="#1ABC9C" Foreground="White"
+                                Padding="10,8" Margin="0,0,5,0"
+                                Cursor="Hand" BorderThickness="0"/>
+                        
+                        <Button x:Name="btnStopMcp" Content="Stop MCP Server" 
+                                Click="BtnStopMcp_Click"
+                                Background="#C0392B" Foreground="White"
+                                Padding="10,8" Margin="5,0,0,0"
+                                Cursor="Hand" BorderThickness="0" Grid.Column="1"/>
+                    </Grid>
+                    
+                    <TextBlock x:Name="txtMcpStatus" Text="MCP Server: Stopped" 
+                               Margin="0,10,0,0"
+                               Foreground="#C0392B" FontWeight="Bold"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        
+        <Border Grid.Row="1" Grid.Column="1" 
+                Background="White" CornerRadius="8" Padding="15" Margin="10,0,0,0"
+                BorderBrush="#DDD" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="Screenshot Preview" FontWeight="Bold" 
+                           Margin="0,0,0,10" Foreground="#34495E"/>
+                
+                <Border Grid.Row="1" Background="#2C3E50" CornerRadius="5">
+                    <Viewbox Stretch="Uniform">
+                        <Image x:Name="imgScreenshot" Margin="10"
+                               Stretch="Uniform"/>
+                    </Viewbox>
+                </Border>
+                
+                <TextBlock Grid.Row="2" Text="Status:" FontWeight="Bold" 
+                           Margin="0,10,0,0" Foreground="#34495E"/>
+            </Grid>
+        </Border>
+        
+        <Border Grid.Row="2" Grid.ColumnSpan="2" 
+                Background="#2C3E50" CornerRadius="8" Padding="10"
+                Margin="0,10,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="Log Output" FontWeight="Bold" 
+                           Margin="0,0,0,5" Foreground="#ECF0F1"/>
+                
+                <TextBox x:Name="txtLog" Grid.Row="1"
+                         Background="#34495E" Foreground="#ECF0F1"
+                         BorderThickness="0" IsReadOnly="True"
+                         TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                         Height="100" FontFamily="Consolas" FontSize="12"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
