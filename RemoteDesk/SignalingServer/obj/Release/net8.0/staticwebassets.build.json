@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "qPNg6mcVMfTVyvVs3VMgY/3al+kTKDOVvyiXGAusUZY=",
+  "Source": "SignalingServer",
+  "BasePath": "_content/SignalingServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
