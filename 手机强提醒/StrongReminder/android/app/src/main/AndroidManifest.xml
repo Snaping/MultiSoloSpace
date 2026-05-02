@@ -41,15 +41,5 @@
         </intent-filter>
       </activity>
       
-      <!-- 电话监听服务 -->
-      <service
-        android:name=".CallMonitorService"
-        android:exported="false"
-        android:foregroundServiceType="phoneCall">
-        <intent-filter>
-            <action android:name="android.telephony.action.PHONE_STATE" />
-        </intent-filter>
-      </service>
-      
     </application>
 </manifest>

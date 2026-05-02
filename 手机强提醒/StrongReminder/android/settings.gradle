@@ -1,5 +1,3 @@
 rootProject.name = 'StrongReminder'
-apply from: file("../node_modules/@react-native/metro-config/react-native-gradle-plugin/settings.gradle")
 
 include ':app'
-includeBuild('../node_modules/@react-native/gradle-plugin')
