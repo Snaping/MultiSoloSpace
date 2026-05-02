@@ -141,6 +141,58 @@ function getSessionsByTopic(topicId) {
   return activeSessions;
 }
 
+function getSessionsGroupedByType() {
+  const allTopics = getTopics();
+  const grouped = {};
+  
+  for (const type of TOPIC_TYPES) {
+    grouped[type] = {
+      type: type,
+      topics: [],
+      sessions: []
+    };
+  }
+  
+  const topicMap = new Map();
+  for (const topic of allTopics) {
+    topicMap.set(topic.id, topic);
+    if (grouped[topic.type]) {
+      grouped[topic.type].topics.push(topic);
+    } else {
+      if (!grouped['其他']) {
+        grouped['其他'] = { type: '其他', topics: [], sessions: [] };
+      }
+      grouped['其他'].topics.push(topic);
+    }
+  }
+  
+  for (const [sessionId, session] of sessions) {
+    const topic = topicMap.get(session.topicId);
+    if (!topic) continue;
+    
+    const typeGroup = grouped[topic.type] || grouped['其他'];
+    if (typeGroup) {
+      typeGroup.sessions.push({
+        ...session,
+        topicTitle: topic.title,
+        topicCreator: topic.creatorName
+      });
+    }
+  }
+  
+  for (const type of Object.keys(grouped)) {
+    grouped[type].sessions.sort((a, b) => {
+      const bubbleDiff = b.bubblePriority - a.bubblePriority;
+      if (Math.abs(bubbleDiff) > 0.01) {
+        return bubbleDiff;
+      }
+      return dayjs(b.lastBubbleTime) - dayjs(a.lastBubbleTime);
+    });
+  }
+  
+  return grouped;
+}
+
 function addMessage(sessionId, content, senderIP, senderName) {
   const sessionMessages = messages.get(sessionId);
   if (!sessionMessages) {
@@ -333,6 +385,14 @@ function cleanupOldData() {
 
 setInterval(cleanupOldData, 60 * 60 * 1000);
 
+function getSession(sessionId) {
+  return sessions.get(sessionId) || null;
+}
+
+function getTopic(topicId) {
+  return topics.get(topicId) || null;
+}
+
 module.exports = {
   TOPIC_TYPES,
   MAX_MESSAGES_PER_SESSION,
@@ -344,6 +404,9 @@ module.exports = {
   bubbleTopic,
   createSession,
   getSessionsByTopic,
+  getSessionsGroupedByType,
+  getSession,
+  getTopic,
   addMessage,
   getMessages,
   addReaction,

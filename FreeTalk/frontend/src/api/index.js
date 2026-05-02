@@ -37,6 +37,16 @@ export async function getSessionsByTopic(topicId) {
   return response.data
 }
 
+export async function getSessionsGrouped() {
+  const response = await api.get('/sessions/grouped')
+  return response.data
+}
+
+export async function getSessionOnlineCount(sessionId) {
+  const response = await api.get(`/sessions/${sessionId}/online`)
+  return response.data
+}
+
 export async function createSession(topicId) {
   const response = await api.post('/sessions', { topicId })
   return response.data
@@ -66,6 +76,16 @@ export async function getUserReaction(messageId) {
 
 export async function getTheme() {
   const response = await api.get('/theme')
+  return response.data
+}
+
+export async function getAllThemes() {
+  const response = await api.get('/themes')
+  return response.data
+}
+
+export async function switchTheme(themeId) {
+  const response = await api.post(`/theme/switch/${themeId}`)
   return response.data
 }
 
