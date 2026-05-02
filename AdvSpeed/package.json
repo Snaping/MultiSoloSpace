@@ -1,0 +1,21 @@
+{
+  "name": "advspeed",
+  "version": "1.0.0",
+  "description": "Windows游戏加速器",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "install:all": "npm install ; cd server ; npm install ; cd ../client ; npm install"
+  },
+  "keywords": ["game", "accelerator", "vpn", "windows"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

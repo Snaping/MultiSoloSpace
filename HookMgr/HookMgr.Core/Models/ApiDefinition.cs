@@ -19,5 +19,9 @@ public enum ApiCategory
     Thread,
     Memory,
     Window,
+    Time,
+    Driver,
+    Synchronization,
+    Security,
     Other
 }

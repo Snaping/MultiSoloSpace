@@ -25,3 +25,4 @@ d:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\QuickScrcpy\QuickScrcpy\obj\Deb
 d:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\QuickScrcpy\QuickScrcpy\obj\Debug\net6.0-windows\QuickScrcpy.pdb
 d:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\QuickScrcpy\QuickScrcpy\obj\Debug\net6.0-windows\QuickScrcpy.genruntimeconfig.cache
 d:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\QuickScrcpy\QuickScrcpy\obj\Debug\net6.0-windows\ref\QuickScrcpy.dll
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\QuickScrcpy\QuickScrcpy\bin\Debug\net6.0-windows\ICSharpCode.SharpZipLib.dll

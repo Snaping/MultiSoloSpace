@@ -2,7 +2,7 @@ const themes = [
   {
     id: 'historical',
     name: '历史人物',
-    icon: '🏯',
+    icon: '�️',
     description: '穿越时空，与历史名人对话',
     names: [
       '秦始皇', '汉武帝', '唐太宗', '宋太祖', '成吉思汗',
@@ -14,7 +14,7 @@ const themes = [
       '项羽', '虞姬', '卓文君', '司马相如', '蔡文姬',
       '陶渊明', '谢灵运', '王维', '孟浩然', '王昌龄',
       '王安石', '欧阳修', '曾巩', '苏洵', '苏辙',
-      '玄奘', '鉴真', '郑和', '戚继光', '郑成功'
+      '玄奘', '郑和', '戚继光', '郑成功', '林则徐'
     ],
     style: {
       primary: '#8B4513',
@@ -58,9 +58,9 @@ const themes = [
       '袁隆平', '屠呦呦', '钟南山', '林巧稚', '吴孟超',
       '玻尔', '薛定谔', '海森堡', '狄拉克',
       '香农', '维纳', '巴贝奇',
-      '莱特兄弟', '贝尔', '马可尼', '富兰克林', '法拉第',
+      '莱特兄弟', '贝尔', '富兰克林', '法拉第',
       '麦克斯韦', '赫兹', '欧姆', '安培', '伏特',
-      '沃森', '克里克', '孟德尔', '摩尔根', '拉马克'
+      '沃森', '克里克', '孟德尔', '摩尔根'
     ],
     style: {
       primary: '#0066FF',
@@ -89,98 +89,6 @@ const themes = [
       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
       animationDuration: '0.5s',
       hoverScale: '1.03'
-    }
-  },
-  {
-    id: 'anime',
-    name: '动漫人物',
-    icon: '🎌',
-    description: '进入二次元世界，与动漫角色互动',
-    names: [
-      '路飞', '鸣人', '孙悟空', '柯南', '蜡笔小新',
-      '哆啦A梦', '皮卡丘', '小智', '夏目贵志', '猫咪老师',
-      '艾伦', '三笠', '利威尔', '爱德华', '阿尔冯斯',
-      '黑崎一护', '朽木露琪亚', '坂田银时', '神乐', '新八',
-      '索隆', '娜美', '乌索普', '山治', '乔巴',
-      '佐助', '小樱', '卡卡西', '鼬', '自来也',
-      '贝吉塔', '悟饭', '特兰克斯', '布玛', '悟天',
-      '小兰', '毛利小五郎', '灰原哀', '阿笠博士', '服部平次',
-      '夏目玲子', '多轨透', '田沼要', '名取周一', '的场静司',
-      '阿尔敏', '埃尔文', '韩吉', '让', '康尼'
-    ],
-    style: {
-      primary: '#FF1493',
-      secondary: '#FF69B4',
-      background: 'linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 50%, #FFC0CB 100%)',
-      backgroundColor: '#FFF0F5',
-      accent: '#FF1493',
-      accentLight: '#FFB6C1',
-      success: '#32CD32',
-      error: '#FF4500',
-      warning: '#FFD700',
-      info: '#87CEEB',
-      font: '"Comic Sans MS", "Chalkboard SE", "Marker Felt", cursive',
-      cardBackground: 'linear-gradient(145deg, #FFFFFF 0%, #FFF0F5 50%, #FFE4E1 100%)',
-      cardShadow: '0 8px 32px rgba(255, 20, 147, 0.3), 0 0 40px rgba(255, 105, 180, 0.2)',
-      cardBorder: '3px solid #FF69B4',
-      buttonGradient: 'linear-gradient(135deg, #FF1493 0%, #FF69B4 50%, #FFB6C1 100%)',
-      buttonShadow: '0 4px 20px rgba(255, 20, 147, 0.4)',
-      inputBorder: '3px solid #FF69B4',
-      inputFocusBorder: '3px solid #FF1493',
-      messageUserBg: 'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)',
-      messageOtherBg: 'linear-gradient(145deg, #FFFFFF 0%, #FFF0F5 100%)',
-      headerBg: 'linear-gradient(180deg, #FF1493 0%, #FF69B4 100%)',
-      headerText: '#FFFFFF',
-      borderRadius: '20px',
-      transition: 'all 0.3s ease',
-      animationDuration: '0.4s',
-      hoverScale: '1.05'
-    }
-  },
-  {
-    id: 'twoDimensional',
-    name: '二次元角色',
-    icon: '💖',
-    description: '与虚拟歌姬和萌系角色相伴',
-    names: [
-      '初音未来', '洛天依', '言和', '乐正绫', '星尘',
-      '镜音铃', '镜音连', '巡音流歌', 'MEIKO', 'KAITO',
-      '蕾姆', '拉姆', '艾米莉亚', '昴', '碧翠丝',
-      '康娜', '托尔', '小林', '才川莉子', '才川乔吉',
-      '纱雾', '和泉正宗', '山田妖精', '千寿村征', '高砂智惠',
-      '辉夜', '白银御行', '藤原千花', '石上优', '伊井野弥子',
-      '麻衣', '梓川咲太', '古贺朋绘', '双叶理央', '丰浜和花',
-      '六花', '勇太', '丹生谷森夏', '凸守早苗', '一色诚',
-      '智乃', '心爱', '理世', '千夜', '纱路',
-      '梓喵', '唯', '澪', '律', '紬'
-    ],
-    style: {
-      primary: '#A855F7',
-      secondary: '#C084FC',
-      background: 'linear-gradient(135deg, #FAF5FF 0%, #F3E8FF 50%, #E9D5FF 100%)',
-      backgroundColor: '#FAF5FF',
-      accent: '#7C3AED',
-      accentLight: '#DDD6FE',
-      success: '#10B981',
-      error: '#F43F5E',
-      warning: '#F59E0B',
-      info: '#8B5CF6',
-      font: '"Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif',
-      cardBackground: 'linear-gradient(145deg, #FFFFFF 0%, #FAF5FF 50%, #F3E8FF 100%)',
-      cardShadow: '0 8px 32px rgba(168, 85, 247, 0.3), 0 0 50px rgba(192, 132, 252, 0.2)',
-      cardBorder: '2px solid #C084FC',
-      buttonGradient: 'linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #C084FC 100%)',
-      buttonShadow: '0 4px 20px rgba(168, 85, 247, 0.4)',
-      inputBorder: '2px solid #C084FC',
-      inputFocusBorder: '3px solid #7C3AED',
-      messageUserBg: 'linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)',
-      messageOtherBg: 'linear-gradient(145deg, #FFFFFF 0%, #FAF5FF 100%)',
-      headerBg: 'linear-gradient(180deg, #7C3AED 0%, #A855F7 100%)',
-      headerText: '#FFFFFF',
-      borderRadius: '16px',
-      transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
-      animationDuration: '0.45s',
-      hoverScale: '1.04'
     }
   },
   {
@@ -237,14 +145,14 @@ const themes = [
     names: [
       '贾宝玉', '林黛玉', '薛宝钗', '王熙凤', '贾母',
       '宋江', '卢俊义', '吴用', '林冲', '鲁智深',
-      '孙悟空', '猪八戒', '沙僧', '唐僧', '牛魔王',
       '刘备', '关羽', '张飞', '诸葛亮', '曹操',
       '史湘云', '妙玉', '贾元春', '贾迎春', '贾探春',
       '晁盖', '公孙胜', '关胜', '秦明', '呼延灼',
       '白骨精', '红孩儿', '铁扇公主', '玉皇大帝', '如来佛祖',
       '孙权', '周瑜', '鲁肃', '吕蒙', '陆逊',
       '堂吉诃德', '桑丘', '哈姆雷特', '罗密欧', '朱丽叶',
-      '福尔摩斯', '华生', '波洛', '马普尔小姐', '邦德'
+      '福尔摩斯', '华生', '波洛', '马普尔小姐', '邦德',
+      '鲁迅', '老舍', '巴金', '茅盾', '郭沫若'
     ],
     style: {
       primary: '#92400E',
@@ -288,9 +196,9 @@ const themes = [
       '舒马赫', '汉密尔顿', '塞纳', '维特尔', '巴顿',
       '泰森', '阿里', '帕奎奥', '梅威瑟', '霍利菲尔德',
       '菲尔普斯', '波波夫', '索普', '霍根班德', '罗切特',
-      '陶菲克', '盖德', '谌龙', '安赛龙', '桃田贤斗',
+      '陶菲克', '盖德', '谌龙', '安赛龙',
       '王治郅', '易建联', '巴特尔', '林书豪', '周琦',
-      '苏炳添', '谢震业', '史冬鹏', '刘长春', '张国伟'
+      '苏炳添', '谢震业', '史冬鹏', '张国伟'
     ],
     style: {
       primary: '#DC2626',
@@ -323,8 +231,8 @@ const themes = [
   },
   {
     id: 'food',
-    name: '美食角色',
-    icon: '🍜',
+    name: '中华美食',
+    icon: '�',
     description: '舌尖上的享受，与美食相伴',
     names: [
       '小笼包', '饺子', '馄饨', '包子', '馒头',
@@ -332,11 +240,11 @@ const themes = [
       '火锅', '烧烤', '麻辣烫', '串串香', '冒菜',
       '奶茶', '咖啡', '果汁', '可乐', '雪碧',
       '披萨', '汉堡', '薯条', '炸鸡', '热狗',
-      '寿司', '刺身', '拉面', '乌冬面', '天妇罗',
-      '牛排', '意面', '沙拉', '三明治', '热狗',
+      '牛排', '意面', '沙拉', '三明治',
       '蛋糕', '面包', '饼干', '巧克力', '冰淇淋',
       '粽子', '月饼', '汤圆', '年糕', '腊八粥',
-      '烤鸭', '烧鸡', '烧鹅', '卤味', '酱板鸭'
+      '烤鸭', '烧鸡', '烧鹅', '卤味', '酱板鸭',
+      '北京烤鸭', '佛跳墙', '东坡肉', '狮子头', '四喜丸子'
     ],
     style: {
       primary: '#EA580C',
@@ -376,6 +284,9 @@ function getDailyTheme(date = new Date()) {
 }
 
 function getThemeById(themeId) {
+  if (themeId === 'daily') {
+    return null;
+  }
   return themes.find(t => t.id === themeId);
 }
 

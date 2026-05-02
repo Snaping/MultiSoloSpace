@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj": {}
+    "D:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj": {}
   },
   "projects": {
-    "d:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj": {
+    "D:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj",
+        "projectUniqueName": "D:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj",
         "projectName": "QuickScrcpy",
-        "projectPath": "d:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj",
+        "projectPath": "D:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj",
         "packagesPath": "C:\\Users\\HUAWEI\\.nuget\\packages\\",
-        "outputPath": "d:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\obj\\",
+        "outputPath": "D:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "d:\\setup\\VisualStudio2022\\Shared\\NuGetPackages"
@@ -51,6 +51,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "SharpZipLib": {
+              "target": "Package",
+              "version": "[1.4.2, )"
+            },
             "System.Management": {
               "target": "Package",
               "version": "[7.0.2, )"

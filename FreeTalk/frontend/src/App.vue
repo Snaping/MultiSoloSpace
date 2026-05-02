@@ -91,7 +91,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, provide, watch } from 'vue'
+import { ref, computed, onMounted, provide, watch, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { io } from 'socket.io-client'
 import { getTheme, getUserIdentity, isVIP as checkVIP, setVIP, getAllThemes, switchTheme } from './api'
@@ -136,6 +136,43 @@ const themeStyle = ref({
   animationDuration: '0.5s',
   hoverScale: '1.02'
 })
+
+function applyThemeCssVariables() {
+  if (typeof document !== 'undefined') {
+    const style = themeStyle.value
+    const root = document.documentElement
+    
+    root.style.setProperty('--theme-primary', style.primary)
+    root.style.setProperty('--theme-secondary', style.secondary)
+    root.style.setProperty('--theme-background', style.background)
+    root.style.setProperty('--theme-background-color', style.backgroundColor)
+    root.style.setProperty('--theme-accent', style.accent)
+    root.style.setProperty('--theme-accent-light', style.accentLight)
+    root.style.setProperty('--theme-success', style.success)
+    root.style.setProperty('--theme-error', style.error)
+    root.style.setProperty('--theme-warning', style.warning)
+    root.style.setProperty('--theme-info', style.info)
+    root.style.setProperty('--theme-font', style.font)
+    root.style.setProperty('--theme-card-shadow', style.cardShadow)
+    root.style.setProperty('--theme-card-border', style.cardBorder)
+    root.style.setProperty('--theme-button-gradient', style.buttonGradient)
+    root.style.setProperty('--theme-button-shadow', style.buttonShadow)
+    root.style.setProperty('--theme-message-user-bg', style.messageUserBg)
+    root.style.setProperty('--theme-message-other-bg', style.messageOtherBg)
+    root.style.setProperty('--theme-header-bg', style.headerBg)
+    root.style.setProperty('--theme-header-text', style.headerText)
+    root.style.setProperty('--theme-border-radius', style.borderRadius)
+    root.style.setProperty('--theme-transition', style.transition)
+    
+    document.body.style.fontFamily = style.font
+    document.body.style.background = style.background
+    document.body.style.backgroundColor = style.backgroundColor
+  }
+}
+
+watch(themeStyle, () => {
+  applyThemeCssVariables()
+}, { deep: true, immediate: false })
 
 const appStyle = computed(() => ({
   background: themeStyle.value.background,
@@ -226,6 +263,10 @@ function updateTheme(themeData) {
   if (themeData.style) {
     themeStyle.value = { ...themeData.style }
   }
+  
+  nextTick(() => {
+    applyThemeCssVariables()
+  })
   
   loadAllThemes()
 }

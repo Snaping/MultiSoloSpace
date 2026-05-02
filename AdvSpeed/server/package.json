@@ -1,0 +1,27 @@
+{
+  "name": "advspeed-server",
+  "version": "1.0.0",
+  "description": "游戏加速器后端服务",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "echo 'No build needed for Node.js server'"
+  },
+  "keywords": ["api", "server", "game-accelerator"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "lowdb": "^6.1.1",
+    "bcryptjs": "^2.4.3",
+    "uuid": "^9.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

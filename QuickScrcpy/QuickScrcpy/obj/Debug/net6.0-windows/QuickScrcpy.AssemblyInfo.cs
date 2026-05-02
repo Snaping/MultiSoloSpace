@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickScrcpy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf205a3dea3dee7426da8de11b79fe75c7c789a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d23883874f51faf90ddcca8de17a01542e471595")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickScrcpy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuickScrcpy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

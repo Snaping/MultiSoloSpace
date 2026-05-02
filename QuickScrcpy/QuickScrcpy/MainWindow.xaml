@@ -149,9 +149,15 @@
                 
                 <Button Grid.Column="1" Content="⚙️ 手动连接" Style="{StaticResource PrimaryButton}" 
                         Click="ManualConnectButton_Click"/>
+                
+                <Button Grid.Column="2" Content="📦 安装依赖" Style="{StaticResource PrimaryButton}" 
+                        Click="InstallDependenciesButton_Click" x:Name="InstallDependenciesButton" Background="#9C27B0"/>
 
                 <ProgressBar Grid.Column="3" x:Name="ScanProgressBar" Height="5" Width="200" 
                              HorizontalAlignment="Right" Margin="10,0" Visibility="Collapsed"/>
+                
+                <ProgressBar Grid.Column="3" x:Name="InstallProgressBar" Height="5" Width="200" 
+                             HorizontalAlignment="Right" Margin="10,0" Visibility="Collapsed" Maximum="100"/>
                 
                 <Button Grid.Column="4" Content="🔗 连接设备" Style="{StaticResource SuccessButton}" 
                         Click="ConnectButton_Click" x:Name="ConnectButton" IsEnabled="False"/>
@@ -177,7 +183,7 @@
                 <DataGrid Grid.Row="1" x:Name="DeviceDataGrid" 
                           SelectionChanged="DeviceDataGrid_SelectionChanged">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="100">
+                        <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="120">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="Foreground" Value="#4CAF50"/>
@@ -186,9 +192,10 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
                         <DataGridTextColumn Header="设备名称" Binding="{Binding DeviceName}" Width="*"/>
-                        <DataGridTextColumn Header="IP地址" Binding="{Binding IPAddress}" Width="130"/>
-                        <DataGridTextColumn Header="端口" Binding="{Binding Port}" Width="60"/>
-                        <DataGridTextColumn Header="制造商" Binding="{Binding Manufacturer}" Width="100"/>
+                        <DataGridTextColumn Header="IP地址" Binding="{Binding IPAddress}" Width="120"/>
+                        <DataGridTextColumn Header="MAC地址" Binding="{Binding MACAddress}" Width="130"/>
+                        <DataGridTextColumn Header="端口" Binding="{Binding Port}" Width="50"/>
+                        <DataGridTextColumn Header="制造商" Binding="{Binding Manufacturer}" Width="90"/>
                         <DataGridTextColumn Header="连接状态" Binding="{Binding IsConnected}" Width="80">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">

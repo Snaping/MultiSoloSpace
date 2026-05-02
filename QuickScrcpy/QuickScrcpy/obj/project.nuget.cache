@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "2yOuLlC3qP8=",
+  "dgSpecHash": "324gq4N+1fU=",
   "success": true,
-  "projectFilePath": "d:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj",
+  "projectFilePath": "D:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\QuickScrcpy\\QuickScrcpy\\QuickScrcpy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HUAWEI\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\HUAWEI\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\HUAWEI\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\HUAWEI\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\HUAWEI\\.nuget\\packages\\sharpziplib\\1.4.2\\sharpziplib.1.4.2.nupkg.sha512",
     "C:\\Users\\HUAWEI\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
     "C:\\Users\\HUAWEI\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\HUAWEI\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",

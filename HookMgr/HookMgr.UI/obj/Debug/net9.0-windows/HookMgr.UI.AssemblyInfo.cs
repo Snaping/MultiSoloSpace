@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HookMgr.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea37762b2c826ad5c324a0f8b99ef7a45c907869")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cbcdf2b99091af20978282a3c04ffe80d520654e")]
 [assembly: System.Reflection.AssemblyProductAttribute("HookMgr.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HookMgr.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

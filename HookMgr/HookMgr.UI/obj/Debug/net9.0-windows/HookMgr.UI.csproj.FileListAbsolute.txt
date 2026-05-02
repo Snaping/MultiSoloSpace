@@ -1,9 +1,6 @@
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\HookMgr.UI.csproj.AssemblyReference.cache
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\App.g.cs
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\HookMgr.UI_MarkupCompile.cache
-D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\MainWindow.g.cs
-D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\GeneratedInternalTypeHelper.g.cs
-D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\HookMgr.UI_MarkupCompile.lref
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\bin\Debug\net9.0-windows\HookMgr.UI.exe
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\bin\Debug\net9.0-windows\HookMgr.UI.deps.json
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\bin\Debug\net9.0-windows\HookMgr.UI.runtimeconfig.json
@@ -13,6 +10,7 @@ D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\bin\Debug\ne
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\bin\Debug\net9.0-windows\HookMgr.Core.dll
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\bin\Debug\net9.0-windows\HookMgr.Core.pdb
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\MainWindow.baml
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\MainWindow.g.cs
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\HookMgr.UI.g.resources
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\HookMgr.UI.GeneratedMSBuildEditorConfig.editorconfig
 D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.UI\obj\Debug\net9.0-windows\HookMgr.UI.AssemblyInfoInputs.cache
