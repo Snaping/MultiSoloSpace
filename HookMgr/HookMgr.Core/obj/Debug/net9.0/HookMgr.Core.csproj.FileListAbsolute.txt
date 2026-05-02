@@ -1,0 +1,13 @@
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.csproj.AssemblyReference.cache
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.AssemblyInfoInputs.cache
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.AssemblyInfo.cs
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.sourcelink.json
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\bin\Debug\net9.0\HookMgr.Core.deps.json
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\bin\Debug\net9.0\HookMgr.Core.dll
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\bin\Debug\net9.0\HookMgr.Core.pdb
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.dll
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\refint\HookMgr.Core.dll
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\HookMgr.Core.pdb
+D:\WorkSpace\Agent\MultiSoloSpace\MultiSoloSpace\HookMgr\HookMgr.Core\obj\Debug\net9.0\ref\HookMgr.Core.dll

@@ -1,0 +1,57 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "HookMgr.UI/1.0.0": {
+        "dependencies": {
+          "HookMgr.Core": "1.0.0"
+        },
+        "runtime": {
+          "HookMgr.UI.dll": {}
+        }
+      },
+      "MinHook.NET/1.1.2": {
+        "runtime": {
+          "lib/net9.0/MinHook.NET.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
+          }
+        }
+      },
+      "HookMgr.Core/1.0.0": {
+        "dependencies": {
+          "MinHook.NET": "1.1.2"
+        },
+        "runtime": {
+          "HookMgr.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HookMgr.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MinHook.NET/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R5aQDsz4L7bRhCZl+IqxGF4kLBkahqWIb8Qm38HHqwU+OhqePhHr68haVDWqqOhZ/GkuhY7DPQRIcbsmkdQRKg==",
+      "path": "minhook.net/1.1.2",
+      "hashPath": "minhook.net.1.1.2.nupkg.sha512"
+    },
+    "HookMgr.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

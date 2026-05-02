@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "eLzMe48xk08=",
+  "success": true,
+  "projectFilePath": "D:\\WorkSpace\\Agent\\MultiSoloSpace\\MultiSoloSpace\\HookMgr\\HookMgr.Core\\HookMgr.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HUAWEI\\.nuget\\packages\\minhook.net\\1.1.2\\minhook.net.1.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
