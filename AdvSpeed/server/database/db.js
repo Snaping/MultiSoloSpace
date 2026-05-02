@@ -1,4 +1,3 @@
-const { Low, JSONFile } = require('lowdb')
 const path = require('path')
 const fs = require('fs')
 
@@ -8,8 +7,6 @@ if (!fs.existsSync(dbDir)) {
 }
 
 const dbPath = path.join(dbDir, 'db.json')
-const adapter = new JSONFile(dbPath)
-const db = new Low(adapter)
 
 const defaultData = {
   games: [
@@ -62,40 +59,67 @@ const defaultData = {
   }
 }
 
-async function initDB() {
-  await db.read()
-  
-  if (!db.data) {
-    db.data = JSON.parse(JSON.stringify(defaultData))
-    await db.write()
-    console.log('数据库已初始化，默认数据已插入')
-  } else {
-    if (!db.data.games || db.data.games.length === 0) {
-      db.data.games = JSON.parse(JSON.stringify(defaultData.games))
+let dbData = null
+
+function readDB() {
+  try {
+    if (fs.existsSync(dbPath)) {
+      const content = fs.readFileSync(dbPath, 'utf-8')
+      dbData = JSON.parse(content)
+    } else {
+      dbData = JSON.parse(JSON.stringify(defaultData))
+      saveDB()
+      console.log('数据库已初始化，默认数据已插入')
     }
-    if (!db.data.routes || db.data.routes.length === 0) {
-      db.data.routes = JSON.parse(JSON.stringify(defaultData.routes))
+    
+    if (!dbData.games || dbData.games.length === 0) {
+      dbData.games = JSON.parse(JSON.stringify(defaultData.games))
     }
-    if (!db.data.cards || db.data.cards.length === 0) {
-      db.data.cards = JSON.parse(JSON.stringify(defaultData.cards))
+    if (!dbData.routes || dbData.routes.length === 0) {
+      dbData.routes = JSON.parse(JSON.stringify(defaultData.routes))
     }
-    if (!db.data.users) db.data.users = []
-    if (!db.data.nextIds) db.data.nextIds = { users: 1, cards: 7 }
-    await db.write()
+    if (!dbData.cards || dbData.cards.length === 0) {
+      dbData.cards = JSON.parse(JSON.stringify(defaultData.cards))
+    }
+    if (!dbData.users) dbData.users = []
+    if (!dbData.nextIds) dbData.nextIds = { users: 1, cards: 7 }
+    
+    return dbData
+  } catch (error) {
+    console.error('读取数据库错误:', error)
+    dbData = JSON.parse(JSON.stringify(defaultData))
+    return dbData
   }
-  
-  console.log('已连接到 LowDB 数据库')
-  return db
 }
 
-async function getDB() {
-  if (!db.data) {
-    await initDB()
+function saveDB() {
+  try {
+    fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2), 'utf-8')
+    return true
+  } catch (error) {
+    console.error('保存数据库错误:', error)
+    return false
   }
-  return db
+}
+
+function getDB() {
+  if (!dbData) {
+    readDB()
+  }
+  return {
+    data: dbData,
+    save: saveDB
+  }
+}
+
+function initDB() {
+  readDB()
+  console.log('已连接到 JSON 数据库')
 }
 
 module.exports = {
   getDB,
-  initDB
+  initDB,
+  readDB,
+  saveDB
 }

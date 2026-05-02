@@ -26,7 +26,7 @@ app.get('/api/health', (req, res) => {
 
 app.get('/api/test-cards', async (req, res) => {
   try {
-    const db = await getDB();
+    const db = getDB();
     const unusedCards = db.data.cards.filter(c => !c.used);
     res.json({
       success: true,
@@ -43,8 +43,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
-async function startServer() {
-  await initDB();
+function startServer() {
+  initDB();
   
   app.listen(PORT, () => {
     console.log(`AdvSpeed 后端服务运行在端口 ${PORT}`);

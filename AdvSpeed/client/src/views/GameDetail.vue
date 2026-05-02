@@ -642,4 +642,174 @@ onUnmounted(() => {
   color: rgba(255, 255, 255, 0.5);
   font-size: 13px;
 }
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .routes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 0 16px;
+  }
+  
+  .main-content {
+    padding: 20px 16px;
+  }
+  
+  .action-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  
+  .selected-info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .accelerate-btn {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .user-vip-status {
+    padding: 8px 12px;
+  }
+  
+  .vip-text {
+    font-size: 13px;
+  }
+  
+  .game-header .game-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+  
+  .game-header .game-name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+    padding: 0 12px;
+  }
+  
+  .back-btn {
+    font-size: 14px;
+  }
+  
+  .main-content {
+    padding: 16px 12px;
+  }
+  
+  .section {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .section-title {
+    font-size: 16px;
+  }
+  
+  .section-desc {
+    font-size: 13px;
+  }
+  
+  .routes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .route-card {
+    padding: 12px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .stat-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+  }
+  
+  .selected-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .info-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-vip-status {
+    gap: 6px;
+    padding: 6px 10px;
+  }
+  
+  .user-vip-status .el-icon {
+    font-size: 16px;
+  }
+  
+  .vip-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 12px;
+  }
+  
+  .header-left {
+    order: 1;
+  }
+  
+  .header-right {
+    order: 2;
+    margin-left: auto;
+  }
+  
+  .game-header {
+    order: 3;
+    width: 100%;
+    margin-top: 12px;
+    justify-content: flex-start;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .game-tags {
+    flex-wrap: wrap;
+  }
+}
 </style>

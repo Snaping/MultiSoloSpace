@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getDB } = require('../database/db');
+const { getDB, saveDB } = require('../database/db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -9,7 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'advspeed_jwt_secret_key_2024';
 router.post('/register', async (req, res) => {
   try {
     const { username, password } = req.body;
-    const db = await getDB();
+    const db = getDB();
 
     if (!username || !password) {
       return res.status(400).json({ 
@@ -37,7 +37,7 @@ router.post('/register', async (req, res) => {
     };
     
     db.data.users.push(newUser);
-    await db.write();
+    saveDB();
 
     const token = jwt.sign(
       { id: newUser.id, username: newUser.username },
@@ -67,7 +67,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
-    const db = await getDB();
+    const db = getDB();
 
     if (!username || !password) {
       return res.status(400).json({ 
@@ -124,7 +124,7 @@ router.post('/activate', async (req, res) => {
   try {
     const { code } = req.body;
     const authHeader = req.headers.authorization;
-    const db = await getDB();
+    const db = getDB();
     
     if (!authHeader) {
       return res.status(401).json({ 
@@ -135,7 +135,7 @@ router.post('/activate', async (req, res) => {
 
     const token = authHeader.replace('Bearer ', '');
     
-    jwt.verify(token, JWT_SECRET, async (err, decoded) => {
+    jwt.verify(token, JWT_SECRET, (err, decoded) => {
       if (err) {
         return res.status(401).json({ 
           success: false, 
@@ -186,7 +186,7 @@ router.post('/activate', async (req, res) => {
       user.card_code = card.code;
       user.expire_at = newExpire.toISOString();
 
-      await db.write();
+      saveDB();
 
       res.json({
         success: true,
@@ -206,7 +206,7 @@ router.post('/activate', async (req, res) => {
 router.get('/verify', async (req, res) => {
   try {
     const authHeader = req.headers.authorization;
-    const db = await getDB();
+    const db = getDB();
     
     if (!authHeader) {
       return res.status(401).json({ 

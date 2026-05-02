@@ -5,7 +5,7 @@ const { getDB } = require('../database/db');
 router.get('/', async (req, res) => {
   try {
     const { category, search } = req.query;
-    const db = await getDB();
+    const db = getDB();
     
     let result = [...db.data.games];
 
@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
 
 router.get('/categories', async (req, res) => {
   try {
-    const db = await getDB();
+    const db = getDB();
     const categories = [...new Set(db.data.games.map(g => g.category))];
     
     res.json({
@@ -57,7 +57,7 @@ router.get('/categories', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const db = await getDB();
+    const db = getDB();
 
     const game = db.data.games.find(g => g.id === parseInt(id));
 
@@ -84,7 +84,7 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/routes', async (req, res) => {
   try {
     const { id } = req.params;
-    const db = await getDB();
+    const db = getDB();
 
     const routes = db.data.routes
       .filter(r => r.game_id === parseInt(id) && r.status === 'online')

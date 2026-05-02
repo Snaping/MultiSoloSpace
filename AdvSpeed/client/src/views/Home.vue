@@ -300,7 +300,8 @@ onMounted(() => {
 
 .header-center {
   flex: 1;
-  max-width: 500px;
+  min-width: 200px;
+  max-width: 700px;
   margin: 0 40px;
 }
 
@@ -520,5 +521,126 @@ onMounted(() => {
 .floating-ping {
   color: #67c23a;
   font-size: 12px;
+}
+
+@media (max-width: 1200px) {
+  .header-center {
+    max-width: 500px;
+    margin: 0 20px;
+  }
+  
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 0 16px;
+  }
+  
+  .header-center {
+    max-width: 350px;
+    margin: 0 16px;
+  }
+  
+  .logo-text {
+    display: none;
+  }
+  
+  .user-detail {
+    display: none;
+  }
+  
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .category-tabs {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+    padding: 0 12px;
+  }
+  
+  .header-left .logo {
+    gap: 6px;
+  }
+  
+  .header-center {
+    margin: 0 12px;
+  }
+  
+  .main-content {
+    padding: 20px 12px;
+  }
+  
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .game-card {
+    padding: 16px;
+  }
+  
+  .game-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+  
+  .game-name {
+    font-size: 16px;
+  }
+  
+  .page-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 12px;
+  }
+  
+  .header-left {
+    order: 1;
+  }
+  
+  .header-right {
+    order: 2;
+    margin-left: auto;
+  }
+  
+  .header-center {
+    order: 3;
+    width: 100%;
+    max-width: none;
+    margin: 12px 0 0 0;
+    min-width: 0;
+  }
+  
+  .user-info {
+    padding: 4px 8px;
+    gap: 8px;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .dropdown-icon {
+    display: none;
+  }
 }
 </style>
