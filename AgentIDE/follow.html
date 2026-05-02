@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentIDE - Follow</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #252526;
+      padding: 10px 16px;
+      border-bottom: 1px solid #3c3c3c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4ec9b0;
+    }
+
+    .status-badge {
+      background: #4ec9b0;
+      color: #1e1e1e;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .content {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .log-line {
+      margin-bottom: 4px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .log-line:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .log-timestamp {
+      color: #858585;
+      margin-right: 12px;
+      font-size: 11px;
+    }
+
+    .log-content {
+      color: #d4d4d4;
+    }
+
+    .log-command {
+      color: #4ec9b0;
+    }
+
+    .log-info {
+      color: #007acc;
+    }
+
+    .scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+      background: #1e1e1e;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #3c3c3c;
+      border-radius: 3px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #4a4a4a;
+    }
+
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: #666;
+    }
+
+    .empty-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .empty-text {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">实时跟随</div>
+    <div class="status-badge" id="statusBadge">已连接</div>
+  </div>
+  <div class="content scrollbar" id="content">
+    <div class="empty-state">
+      <div class="empty-icon">📡</div>
+      <div class="empty-text">等待主窗口发送消息...</div>
+    </div>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+    const content = document.getElementById('content');
+    const statusBadge = document.getElementById('statusBadge');
+
+    ipcRenderer.on('update-content', (event, message) => {
+      if (content.querySelector('.empty-state')) {
+        content.innerHTML = '';
+      }
+
+      const logLine = document.createElement('div');
+      logLine.className = 'log-line';
+
+      const timestamp = new Date().toLocaleTimeString('zh-CN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+
+      let contentClass = 'log-content';
+      if (message.startsWith('>')) {
+        contentClass = 'log-command';
+      } else if (message.includes('切换') || message.includes('更新') || message.includes('设置')) {
+        contentClass = 'log-info';
+      }
+
+      logLine.innerHTML = `<span class="log-timestamp">[${timestamp}]</span><span class="${contentClass}">${message}</span>`;
+      content.appendChild(logLine);
+      content.scrollTop = content.scrollHeight;
+    });
+  </script>
+</body>
+</html>
